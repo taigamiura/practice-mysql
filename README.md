@@ -55,6 +55,21 @@ CREATE TABLE user (
 大量のデータを扱う場合、インデックスを適切に設定することで検索性能が向上します。
 不要なインデックスは、INSERTやUPDATEのパフォーマンスを低下させる可能性がありますので、慎重に設計してください。
 
+### DockerからMySQLコンテナを起動
+以下のコマンドを使用して、DockerからMySQLイメージを取得し、コンテナを起動します。
+
+```bash
+# イメージの取得
+docker pull taigamiura/mysql9.2.0
+# コンテナの起動
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=p@ssw0rd -d taigamiura/mysql9.2.0
+#コンテナが起動したら、以下のコマンドでMySQLにログインします。
+mysql -uroot -pp@ssw0rd
+```
+
+🐳
+https://hub.docker.com/r/taigamiura/mysql9.2.0
+
 ### 練習課題
 このREADMEを参考にして、インデックスの追加や他の最適化を行い、パフォーマンスを向上させる練習をしてみましょう。具体的には、以下のようなことに挑戦してみてください。
 
